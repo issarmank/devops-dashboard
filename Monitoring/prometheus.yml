@@ -12,3 +12,15 @@ scrape_configs:
       - targets: ["node-exporter:9100"]
     scrape_interval: 5s
     metrics_path: /metrics
+
+  - job_name: "cadvisor"
+    static_configs:
+      - targets: ["cadvisor:8080"]
+    scrape_interval: 5s
+    metrics_path: /metrics
+
+  - job_name: "backend"
+    static_configs:
+      - targets: ["backend:3001"]
+    scrape_interval: 5s
+    metrics_path: /metrics  
